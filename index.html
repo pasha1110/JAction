@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JAction</title>
+    <!-- original version(no compressed) -->
+    <!-- <script src="./src/original/JAction.js"></script> -->
+    <!-- compressed version(recomended)-->
+    <script src="./src/compressed/JAction.min.js"></script>
+</head>
+
+<!-- Hello Wordl example using JAction by erlangga -->
+
+<body>
+    <script>
+
+        // create the H! element
+        let element = jct.createElement("h1", {}, "Hello World")
+        //append into body
+        jct.appendElement("body", element)
+
+        // set the text 
+        jct.setText("h1", "Hello from JAction!")
+    </script>
+</body>
+
+</html>

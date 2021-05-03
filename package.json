@@ -1,0 +1,27 @@
+{
+  "name": "jaction",
+  "version": "1.0.0",
+  "description": "JAction is a javascript library for simple DOM manipulation and ajax, it's fast!",
+  "main": "./src/original/JAction.js",
+  "files": [
+    "./src/original/JAction.js",
+    "./src/compressed/JAction.min.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pasha1110/JAction.git"
+  },
+  "keywords": [
+    "DOM",
+    "ajax"
+  ],
+  "author": "erlangga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pasha1110/JAction/issues"
+  },
+  "homepage": "https://github.com/pasha1110/JAction#readme"
+}

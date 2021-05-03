@@ -112,7 +112,7 @@ or in the web:
 
     // if the propertyName is not a string
     if (typeof propertyName !== "string") {
-      throw new Error("JActionError: type of attr name must be a string! receive",typeof propertyName)
+      throw new Error("JActionError: type of attr name must be a string! receive", typeof propertyName)
     }
     return el.getAttribute(propertyName)
   }
@@ -126,7 +126,7 @@ or in the web:
 
     // if the prop is not a string 
     if (typeof prop !== "string") {
-      throw new Error("JActionError: type of prop name must be a string! receive",typeof prop)
+      throw new Error("JActionError: type of prop name must be a string! receive", typeof prop)
     }
     el.setAttribute(prop, val)
   }
@@ -139,7 +139,7 @@ or in the web:
 
     // if event is not a string
     if (typeof event !== "string") {
-      throw new Error("JActionError: type of event must be a string! receive",typeof event)
+      throw new Error("JActionError: type of event must be a string! receive", typeof event)
     }
     el.addEventListener(event, fn)
   }
@@ -399,70 +399,62 @@ or in the web:
     JAction.setEventAll(id, "mouseenter", f1)
     JAction.setEventAll(id, "mouseleave", f2)
   }
-  
-  JAction.createAttr = function (attrName,attrValue){
+
+  JAction.createAttr = function (attrName, attrValue) {
     let ca, cv;
     cv = attrValue
-    ca = document.createAttribute (attrName)
+    ca = document.createAttribute(attrName)
     ca.value = cv
 
     return ca
   }
-  
-  JAction.removeAttr = function (id,attrName){
-    let el = JAction.selectSpecific (id)
-    el.removeAttribute (attrName)
-  }
-  
-  JAction.setClass = function (id,className){
-    let elId = JAction.selectSpecific (id)
-    let createClass = JAction.createAttr ("class",className)
-  
-    elId.setAttributeNode (createClass)
-  }
-  
-  JAction.getClass = function (id){
-    return JAction.getAttr (id,"class")
-  }
-  
-  JAction.setId = function (id,idName){
-    let elId = JAction.selectSpecific (id)
-    let createId = JAction.createAttr ("id",idName)
-    
-    elId.setAttributeNode (createId)
-  }
-  
-  JAction.getId = function (id){
-    return JAction.getAttr (id,"id")
-  }
-  
-  JAction.setLink = function (id,link){
-    let elid = JAction.selectSpecific (id)
-    let createHref = JAction.createAttr ("href",link)
-    
-    elid.setAttributeNode (createHref)
-  }
-  
-  JAction.getLink = function (id){
-    return JAction.getAttr (id,"href")
+
+  JAction.removeAttr = function (id, attrName) {
+    let el = JAction.selectSpecific(id)
+    el.removeAttribute(attrName)
   }
 
-   JAction.toggleFade = function (id,dur=1000){
-     let el = JAction.selectSpecific (id)
-     if (el.style.opacity == "0"){
-       JAction.fadeIn (id,dur)
-     }else {
-       JAction.fadeOut (id,dur)
-     }
-   }
+  JAction.setClass = function (id, className) {
+    let elId = JAction.selectSpecific(id)
+    let createClass = JAction.createAttr("class", className)
 
-  //parent is a public Object, embedded on window Object
+    elId.setAttributeNode(createClass)
+  }
 
-  //parent.jct is an ALIAS of JAction
-  parent.jct = JAction
+  JAction.getClass = function (id) {
+    return JAction.getAttr(id, "class")
+  }
 
-  //parent.JAction is the default Object
-  parent.JAction = JAction
+  JAction.setId = function (id, idName) {
+    let elId = JAction.selectSpecific(id)
+    let createId = JAction.createAttr("id", idName)
+
+    elId.setAttributeNode(createId)
+  }
+
+  JAction.getId = function (id) {
+    return JAction.getAttr(id, "id")
+  }
+
+  JAction.setLink = function (id, link) {
+    let elid = JAction.selectSpecific(id)
+    let createHref = JAction.createAttr("href", link)
+
+    elid.setAttributeNode(createHref)
+  }
+
+  JAction.getLink = function (id) {
+    return JAction.getAttr(id, "href")
+  }
+
+  JAction.toggleFade = function (id, dur = 1000) {
+    let el = JAction.selectSpecific(id)
+    if (el.style.opacity == "0") {
+      JAction.fadeIn(id, dur)
+    } else {
+      JAction.fadeOut(id, dur)
+    }
+  }
 
 
   function notIE(ajax) {
@@ -497,4 +489,22 @@ or in the web:
     xml.send()
 
   }
+
+  // exporting sessions
+  try {
+    module.exports.jct = JAction
+  } catch (err) {
+    //parent is a public Object, embedded on window Object
+
+    //parent.jct is an ALIAS of JAction
+    parent.jct = JAction
+
+    //parent.JAction is the default Object
+    parent.JAction = JAction
+  }
+
+
 }(window))
+
+// made by LOVE 
+// ~by Erlangga
