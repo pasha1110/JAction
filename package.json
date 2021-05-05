@@ -1,6 +1,6 @@
 {
   "name": "jaction",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "JAction is a javascript library for simple DOM manipulation and ajax, it's fast!",
   "main": "./src/original/JAction.js",
   "files": [
