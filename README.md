@@ -64,7 +64,7 @@ and, place the script in the head tag
 | -------------- | ------ |
 | jQuery(3.6.0)  | 282 KB |
 | Dojo(1.10.4)   | 598 KB |
-| JAction(1.1.0) | 13 KB  |
+| JAction(1.2.0) | 13 KB  |
 <br>
 compressed:
 
@@ -73,7 +73,7 @@ compressed:
 | -------------- | ------ |
 | jQuery(3.6.0)  | 87.4KB |
 | Dojo(1.10.4)   | 155 KB |
-| JAction(1.1.0) | 12 KB  |
+| JAction(1.2.0) | 12 KB  |
 
 </div>
 
