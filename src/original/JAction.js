@@ -472,6 +472,31 @@ or in the web:
     el.forEach(cb)
   }
 
+  JAction.displayData = function (target, data) {
+    textContent = JAction.getHTML(target) || target
+    textContent = eval('`' + textContent + '`')
+
+    JAction.setHTML(target, textContent)
+
+    const render = (target, vl) => {
+
+      textContent = eval('`' + textContent + '`')
+
+      JAction.setHTML(target, vl)
+
+    }
+
+    return new Proxy(data, {
+      set(id, property, value) {
+        id[property] = value
+        render(target, id[property] = value)
+
+        return true
+      }
+    })
+
+  }
+
 
   function notIE(ajax) {
     let xml = new XMLHttpRequest()
